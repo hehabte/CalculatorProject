@@ -1,0 +1,8 @@
+C:\Users\Helen\Documents\Visual Studio 2010\Projects\HHabteHW5.5\bin\Debug\HHabteHW5.5.exe
+C:\Users\Helen\Documents\Visual Studio 2010\Projects\HHabteHW5.5\bin\Debug\HHabteHW5.5.pdb
+C:\Users\Helen\Documents\Visual Studio 2010\Projects\HHabteHW5.5\obj\x86\Debug\HHabteHW5._5.Form1.resources
+C:\Users\Helen\Documents\Visual Studio 2010\Projects\HHabteHW5.5\obj\x86\Debug\HHabteHW5._5.Properties.Resources.resources
+C:\Users\Helen\Documents\Visual Studio 2010\Projects\HHabteHW5.5\obj\x86\Debug\HHabteHW5.5.csproj.GenerateResource.Cache
+C:\Users\Helen\Documents\Visual Studio 2010\Projects\HHabteHW5.5\obj\x86\Debug\HHabteHW5.5.exe
+C:\Users\Helen\Documents\Visual Studio 2010\Projects\HHabteHW5.5\obj\x86\Debug\HHabteHW5.5.pdb
+C:\Users\Helen\Documents\Visual Studio 2010\Projects\HHabteHW5.5\obj\x86\Debug\HHabteHW5.5.csprojResolveAssemblyReference.cache
