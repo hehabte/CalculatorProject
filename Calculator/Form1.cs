@@ -12,9 +12,9 @@ namespace HHabteHW5._5
     public partial class Form1 : Form
     {
         private decimal inputinterger;
-        private bool add; //determining if we are adding or subtracting
-        private bool multiply; //determining if we are multiplying or dividing
+        private string operation;
 
+           
         public Form1 ( )
         {
             InitializeComponent();
@@ -24,7 +24,6 @@ namespace HHabteHW5._5
         {
             
         }
-
 
         //Button Functions
         private void oneButton_Click ( object sender, EventArgs e )
@@ -68,8 +67,7 @@ namespace HHabteHW5._5
                 return;
 
             inputinterger = decimal.Parse(outputTextBox.Text);
-            add = true;
-            multiply = false;
+            operation = "add";
             outputTextBox.Clear();
         }
 
@@ -79,8 +77,7 @@ namespace HHabteHW5._5
                 return;
             
             inputinterger = decimal.Parse(outputTextBox.Text);
-            multiply = true;
-            add = false;
+            operation = "multiply";
             outputTextBox.Clear();
         }
 
@@ -90,8 +87,7 @@ namespace HHabteHW5._5
                 return;
             
             inputinterger = decimal.Parse(outputTextBox.Text);
-            add = false;
-            multiply = false;
+            operation = "subtract";
             outputTextBox.Clear();
         }
 
@@ -101,47 +97,37 @@ namespace HHabteHW5._5
                 return;
 
             inputinterger = decimal.Parse(outputTextBox.Text);
-            multiply = true;
-            add = true;
+            operation = "divide";
             outputTextBox.Clear();
         }
 
         //computation button "="
         private void compButton_Click ( object sender, EventArgs e )
         {
-            //Determing the correct computation w/ [multiply, add] booleans
-                //[multiply, add]
-                // true, false = multiply
-                // false, true = addition
-                // false, false = subtraction
-                // true, true = division
-
-            if (add && !multiply)
-            {
-                inputinterger += decimal.Parse(outputTextBox.Text);
-                outputTextBox.Text = inputinterger.ToString();
-            }
-            else if (multiply && !add)
-            {
-                //System.Diagnostics.Debug.WriteLine(multiply + "-" + inputinterger + "-" + outputTextBox.Text);
-                inputinterger *= decimal.Parse(outputTextBox.Text);
-                outputTextBox.Text = inputinterger.ToString();
-            }
-            else if (multiply && add)
-            {
-                //System.Diagnostics.Debug.WriteLine(inputinterger);
-                //System.Diagnostics.Debug.WriteLine(outputTextBox.Text);
-                inputinterger = inputinterger / (decimal.Parse(outputTextBox.Text));
-
-                //System.Diagnostics.Debug.WriteLine(inputinterger);
-                outputTextBox.Text = inputinterger.ToString("##.####");
-            }
-            else if (!multiply && !add)
-            {
-                inputinterger -= decimal.Parse(outputTextBox.Text);
-                outputTextBox.Text = inputinterger.ToString();
-            }   
-
+            switch(operation)       
+            {         
+               case "add":   
+                    inputinterger += decimal.Parse(outputTextBox.Text);
+               break;    
+                
+               case "subtract:            
+                    inputinterger -= decimal.Parse(outputTextBox.Text);
+               break;      
+                  
+               case "divide":            
+                    inputinterger = inputinterger / (decimal.Parse(outputTextBox.Text));
+               break;
+                
+               case "multiply":
+                     inputinterger *= decimal.Parse(outputTextBox.Text);
+               break;
+                  
+               default:            
+                  Console.WriteLine("Invalid selection!");            
+               break;      
+             }
+             
+             outputTextBox.Text = inputinterger.ToString();
         }
 
         private void clearButton_Click ( object sender, EventArgs e )
